@@ -1,0 +1,272 @@
+[
+  {
+    "id": "hsk2_001",
+    "hanzi": "买",
+    "pinyin": "mǎi",
+    "meaning": "mua",
+    "example_cn": "我买一本书",
+    "example_vi": "Tôi mua một cuốn sách",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_002",
+    "hanzi": "卖",
+    "pinyin": "mài",
+    "meaning": "bán",
+    "example_cn": "他卖衣服",
+    "example_vi": "Anh ấy bán quần áo",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_003",
+    "hanzi": "用",
+    "pinyin": "yòng",
+    "meaning": "sử dụng",
+    "example_cn": "我用笔",
+    "example_vi": "Tôi dùng bút",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_004",
+    "hanzi": "给",
+    "pinyin": "gěi",
+    "meaning": "cho, tặng",
+    "example_cn": "给我一个苹果",
+    "example_vi": "Cho tôi một quả táo",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_005",
+    "hanzi": "找",
+    "pinyin": "zhǎo",
+    "meaning": "tìm",
+    "example_cn": "我找钥匙",
+    "example_vi": "Tôi tìm chìa khóa",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_006",
+    "hanzi": "放",
+    "pinyin": "fàng",
+    "meaning": "đặt, để",
+    "example_cn": "把书放在桌子上",
+    "example_vi": "Để sách trên bàn",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_007",
+    "hanzi": "拿",
+    "pinyin": "ná",
+    "meaning": "lấy",
+    "example_cn": "拿我的笔",
+    "example_vi": "Lấy bút của tôi",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_008",
+    "hanzi": "坐",
+    "pinyin": "zuò",
+    "meaning": "ngồi",
+    "example_cn": "我坐在椅子上",
+    "example_vi": "Tôi ngồi trên ghế",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_009",
+    "hanzi": "站",
+    "pinyin": "zhàn",
+    "meaning": "đứng",
+    "example_cn": "我站在这里",
+    "example_vi": "Tôi đứng ở đây",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_010",
+    "hanzi": "走",
+    "pinyin": "zǒu",
+    "meaning": "đi bộ",
+    "example_cn": "我走到学校",
+    "example_vi": "Tôi đi bộ đến trường",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_011",
+    "hanzi": "跑",
+    "pinyin": "pǎo",
+    "meaning": "chạy",
+    "example_cn": "他跑得很快",
+    "example_vi": "Anh ấy chạy rất nhanh",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_012",
+    "hanzi": "骑",
+    "pinyin": "qī",
+    "meaning": "cỡi",
+    "example_cn": "我骑自行车",
+    "example_vi": "Tôi cỡi xe đạp",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_013",
+    "hanzi": "开车",
+    "pinyin": "kāichē",
+    "meaning": "lái xe",
+    "example_cn": "我开车去工作",
+    "example_vi": "Tôi lái xe đi làm",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_014",
+    "hanzi": "停",
+    "pinyin": "tíng",
+    "meaning": "dừng",
+    "example_cn": "停一下",
+    "example_vi": "Dừng một chút",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_015",
+    "hanzi": "下车",
+    "pinyin": "xiàchē",
+    "meaning": "xuống xe",
+    "example_cn": "我下车了",
+    "example_vi": "Tôi xuống xe rồi",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_016",
+    "hanzi": "上车",
+    "pinyin": "shàngchē",
+    "meaning": "lên xe",
+    "example_cn": "我上车了",
+    "example_vi": "Tôi lên xe rồi",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_017",
+    "hanzi": "飞",
+    "pinyin": "fēi",
+    "meaning": "bay",
+    "example_cn": "鸟飞到天空",
+    "example_vi": "Chim bay lên trời",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_018",
+    "hanzi": "游泳",
+    "pinyin": "yóuyǒng",
+    "meaning": "bơi",
+    "example_cn": "我喜欢游泳",
+    "example_vi": "Tôi thích bơi",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_019",
+    "hanzi": "跳",
+    "pinyin": "tiào",
+    "meaning": "nhảy",
+    "example_cn": "小孩跳舞",
+    "example_vi": "Bé nhảy múa",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_020",
+    "hanzi": "唱",
+    "pinyin": "chàng",
+    "meaning": "hát",
+    "example_cn": "他唱歌",
+    "example_vi": "Anh ấy hát",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_021",
+    "hanzi": "跳舞",
+    "pinyin": "tiàowǔ",
+    "meaning": "nhảy múa",
+    "example_cn": "我们跳舞",
+    "example_vi": "Chúng tôi nhảy múa",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_022",
+    "hanzi": "踢",
+    "pinyin": "tī",
+    "meaning": "đá",
+    "example_cn": "踢足球",
+    "example_vi": "Đá bóng",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_023",
+    "hanzi": "打",
+    "pinyin": "dǎ",
+    "meaning": "đánh",
+    "example_cn": "打篮球",
+    "example_vi": "Chơi bóng rổ",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_024",
+    "hanzi": "教",
+    "pinyin": "jiāo",
+    "meaning": "dạy",
+    "example_cn": "老师教学生",
+    "example_vi": "Thầy dạy học sinh",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_025",
+    "hanzi": "学",
+    "pinyin": "xué",
+    "meaning": "học",
+    "example_cn": "我学英文",
+    "example_vi": "Tôi học tiếng Anh",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_026",
+    "hanzi": "帮",
+    "pinyin": "bāng",
+    "meaning": "giúp đỡ",
+    "example_cn": "我帮你",
+    "example_vi": "Tôi giúp bạn",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_027",
+    "hanzi": "问",
+    "pinyin": "wèn",
+    "meaning": "hỏi",
+    "example_cn": "我问你一个问题",
+    "example_vi": "Tôi hỏi bạn một câu hỏi",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_028",
+    "hanzi": "答",
+    "pinyin": "dá",
+    "meaning": "trả lời",
+    "example_cn": "他答对了",
+    "example_vi": "Anh ấy trả lời đúng",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_029",
+    "hanzi": "死",
+    "pinyin": "sǐ",
+    "meaning": "chết",
+    "example_cn": "他死了",
+    "example_vi": "Anh ấy đã chết",
+    "level": "HSK2"
+  },
+  {
+    "id": "hsk2_030",
+    "hanzi": "活",
+    "pinyin": "huó",
+    "meaning": "sống",
+    "example_cn": "这是活的蛇",
+    "example_vi": "Đây là con rắn sống",
+    "level": "HSK2"
+  }
+]

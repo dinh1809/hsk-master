@@ -1,0 +1,182 @@
+[
+  {
+    "id": "hsk1_001",
+    "hanzi": "是",
+    "pinyin": "shì",
+    "meaning": "là",
+    "example_cn": "我是学生",
+    "example_vi": "Tôi là học sinh",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_002",
+    "hanzi": "有",
+    "pinyin": "yǒu",
+    "meaning": "có",
+    "example_cn": "我有一个朋友",
+    "example_vi": "Tôi có một người bạn",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_003",
+    "hanzi": "在",
+    "pinyin": "zài",
+    "meaning": "ở tại",
+    "example_cn": "我在家",
+    "example_vi": "Tôi ở nhà",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_004",
+    "hanzi": "去",
+    "pinyin": "qù",
+    "meaning": "đi",
+    "example_cn": "我去学校",
+    "example_vi": "Tôi đi học",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_005",
+    "hanzi": "来",
+    "pinyin": "lái",
+    "meaning": "đến, tới",
+    "example_cn": "他来了",
+    "example_vi": "Anh ấy đã đến",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_006",
+    "hanzi": "看",
+    "pinyin": "kàn",
+    "meaning": "xem, nhìn",
+    "example_cn": "我看电视",
+    "example_vi": "Tôi xem TV",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_007",
+    "hanzi": "说",
+    "pinyin": "shuō",
+    "meaning": "nói",
+    "example_cn": "他说中文",
+    "example_vi": "Anh ấy nói tiếng Trung",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_008",
+    "hanzi": "做",
+    "pinyin": "zuò",
+    "meaning": "làm",
+    "example_cn": "我做作业",
+    "example_vi": "Tôi làm bài tập",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_009",
+    "hanzi": "吃",
+    "pinyin": "chī",
+    "meaning": "ăn",
+    "example_cn": "我吃米饭",
+    "example_vi": "Tôi ăn cơm",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_010",
+    "hanzi": "喝",
+    "pinyin": "hē",
+    "meaning": "uống",
+    "example_cn": "我喝水",
+    "example_vi": "Tôi uống nước",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_011",
+    "hanzi": "睡",
+    "pinyin": "shuì",
+    "meaning": "ngủ",
+    "example_cn": "我睡觉",
+    "example_vi": "Tôi ngủ",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_012",
+    "hanzi": "写",
+    "pinyin": "xiě",
+    "meaning": "viết",
+    "example_cn": "我写字",
+    "example_vi": "Tôi viết chữ",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_013",
+    "hanzi": "读",
+    "pinyin": "dú",
+    "meaning": "đọc",
+    "example_cn": "我读书",
+    "example_vi": "Tôi đọc sách",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_014",
+    "hanzi": "听",
+    "pinyin": "tīng",
+    "meaning": "nghe",
+    "example_cn": "我听音乐",
+    "example_vi": "Tôi nghe nhạc",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_015",
+    "hanzi": "想",
+    "pinyin": "xiǎng",
+    "meaning": "muốn, nghĩ",
+    "example_cn": "我想去中国",
+    "example_vi": "Tôi muốn đi Trung Quốc",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_016",
+    "hanzi": "知道",
+    "pinyin": "zhīdào",
+    "meaning": "biết",
+    "example_cn": "你知道吗?",
+    "example_vi": "Bạn biết không?",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_017",
+    "hanzi": "喜欢",
+    "pinyin": "xǐhuān",
+    "meaning": "thích",
+    "example_cn": "我喜欢学中文",
+    "example_vi": "Tôi thích học tiếng Trung",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_018",
+    "hanzi": "学",
+    "pinyin": "xué",
+    "meaning": "học",
+    "example_cn": "我学中文",
+    "example_vi": "Tôi học tiếng Trung",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_019",
+    "hanzi": "工作",
+    "pinyin": "gōngzuò",
+    "meaning": "làm việc",
+    "example_cn": "我在公司工作",
+    "example_vi": "Tôi làm việc ở công ty",
+    "level": "HSK1"
+  },
+  {
+    "id": "hsk1_020",
+    "hanzi": "开",
+    "pinyin": "kāi",
+    "meaning": "mở",
+    "example_cn": "请开门",
+    "example_vi": "Vui lòng mở cửa",
+    "level": "HSK1"
+  }
+]
