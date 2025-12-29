@@ -14,13 +14,23 @@ import { calculateNextReview } from '../utils/sm2';
  */
 export const getUserProgress = async (userId, deckId) => {
     try {
+        // Authentication check
+        if (!userId || !deckId) {
+            console.warn('getUserProgress: Missing userId or deckId');
+            return [];
+        }
+
         const { data, error } = await supabase
             .from('user_progress')
             .select('*')
             .eq('user_id', userId)
             .eq('deck_id', deckId);
 
-        if (error) throw error;
+        if (error) {
+            console.error('Database error in getUserProgress:', error);
+            return [];
+        }
+
         return data || [];
     } catch (error) {
         console.error('Error fetching user progress:', error);
@@ -38,18 +48,37 @@ export const getUserProgress = async (userId, deckId) => {
  */
 export const saveWordProgress = async (userId, deckId, wordId, progressData) => {
     try {
+        // Authentication check
+        if (!userId || !deckId || !wordId) {
+            console.warn('saveWordProgress: Missing required parameters');
+            throw new Error('Missing userId, deckId, or wordId');
+        }
+
+        // Validate and ensure next_review_at is a valid ISO string
+        let nextReviewAt = progressData.next_review_at;
+        if (nextReviewAt && typeof nextReviewAt === 'string') {
+            // Validate it's a valid date
+            const testDate = new Date(nextReviewAt);
+            if (isNaN(testDate.getTime())) {
+                console.warn('Invalid next_review_at date, using current time');
+                nextReviewAt = new Date().toISOString();
+            }
+        } else if (!nextReviewAt) {
+            nextReviewAt = new Date().toISOString();
+        }
+
         // Ensure we are only sending fields that exist in the database
         const payload = {
             user_id: userId,
             deck_id: deckId,
             word_id: wordId,
-            status: progressData.status,
-            ease_factor: progressData.ease_factor,
-            interval: progressData.interval,
-            repetitions: progressData.repetitions,
-            step_index: progressData.step_index,
-            next_review_at: progressData.next_review_at,
-            last_reviewed_at: progressData.last_reviewed_at,
+            status: progressData.status || 'new',
+            ease_factor: progressData.ease_factor || 2.5,
+            interval: progressData.interval || 0,
+            repetitions: progressData.repetitions || 0,
+            step_index: progressData.step_index || 0,
+            next_review_at: nextReviewAt,
+            last_reviewed_at: progressData.last_reviewed_at || new Date().toISOString(),
             updated_at: new Date().toISOString()
         };
 
@@ -138,9 +167,15 @@ export const syncLocalProgressToDatabase = async (userId, deckId, localVocab) =>
  */
 export const getDeckStats = async (userId, deckId) => {
     try {
+        // Authentication check
+        if (!userId || !deckId) {
+            console.warn('getDeckStats: Missing userId or deckId');
+            return { total: 0, new: 0, learning: 0, reviewing: 0, mastered: 0, due: 0 };
+        }
+
         const progress = await getUserProgress(userId, deckId);
 
-        // If no progress data, return zeros
+        // If no progress data, return zeros (graceful fallback for new users)
         if (!progress || progress.length === 0) {
             return { total: 0, new: 0, learning: 0, reviewing: 0, mastered: 0, due: 0 };
         }
@@ -153,7 +188,12 @@ export const getDeckStats = async (userId, deckId) => {
             mastered: progress.filter(p => p.status === 'mastered').length,
             due: progress.filter(p => {
                 if (!p.next_review_at) return false;
-                return new Date(p.next_review_at) <= new Date();
+                try {
+                    return new Date(p.next_review_at) <= new Date();
+                } catch (e) {
+                    console.warn('Invalid date in next_review_at:', p.next_review_at);
+                    return false;
+                }
             }).length
         };
 

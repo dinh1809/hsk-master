@@ -89,7 +89,7 @@ const FlashcardSession = ({ data: initialData, onBack, user, deckId }) => {
                 if (user && deckId) {
                     const progress = await getUserProgress(user.id, deckId);
 
-                    // Merge database progress with initial data
+                    // Merge database progress with initial data (Left Join Pattern)
                     const mergedVocab = normalizedData.map(word => {
                         const savedProgress = progress.find(p => p.word_id === word.id);
                         if (savedProgress) {
@@ -104,7 +104,18 @@ const FlashcardSession = ({ data: initialData, onBack, user, deckId }) => {
                                 step_index: savedProgress.step_index || 0
                             };
                         }
-                        return word;
+                        // DEFAULT VALUES FOR NEW CARDS (Left Join Pattern)
+                        // This ensures new users don't crash when they have zero progress
+                        return {
+                            ...word,
+                            interval: 0,
+                            repetitions: 0,
+                            ease_factor: 2.5,
+                            next_review_at: null,
+                            last_reviewed: null,
+                            status: 'new',
+                            step_index: 0
+                        };
                     });
 
                     setVocab(mergedVocab);

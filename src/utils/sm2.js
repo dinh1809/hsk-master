@@ -15,6 +15,19 @@ const EASY_INTERVAL = 4; // 4 days
  * @returns {Object} Updated card with new review parameters
  */
 export function calculateNextReview(quality, card) {
+    // Null check: Handle missing or undefined card data
+    if (!card) {
+        return {
+            status: 'new',
+            step_index: 0,
+            interval: 0,
+            ease_factor: 2.5,
+            repetitions: 0,
+            next_review_at: new Date().toISOString(),
+            last_reviewed_at: new Date().toISOString()
+        };
+    }
+
     let {
         ease_factor = 2.5,
         interval = 0,
