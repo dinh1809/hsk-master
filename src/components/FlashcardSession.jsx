@@ -71,6 +71,7 @@ const FlashcardSession = ({ data: initialData, onBack, user, deckId }) => {
             setIsLoading(true);
             try {
                 // Normalize initial data
+                // Normalize initial data
                 const normalizedData = initialData.map((item, idx) => ({
                     ...item,
                     id: item.id || `local-${idx}`,
@@ -96,10 +97,11 @@ const FlashcardSession = ({ data: initialData, onBack, user, deckId }) => {
                                 ...word,
                                 interval: savedProgress.interval || 0,
                                 repetitions: savedProgress.repetitions || 0,
-                                ease_factor: savedProgress.easiness_factor || 2.5,
-                                next_review: savedProgress.next_review_at,
-                                last_reviewed: savedProgress.updated_at,
-                                status: savedProgress.status || 'new'
+                                ease_factor: savedProgress.ease_factor || 2.5,
+                                next_review_at: savedProgress.next_review_at,
+                                last_reviewed: savedProgress.last_reviewed_at,
+                                status: savedProgress.status || 'new',
+                                step_index: savedProgress.step_index || 0
                             };
                         }
                         return word;
@@ -118,7 +120,6 @@ const FlashcardSession = ({ data: initialData, onBack, user, deckId }) => {
                 }
             } catch (error) {
                 console.error('Error initializing vocab:', error);
-                // Fallback to normalized data on error
                 setVocab(initialData.map((item, idx) => ({
                     ...item,
                     id: item.id || `local-${idx}`,
@@ -138,14 +139,18 @@ const FlashcardSession = ({ data: initialData, onBack, user, deckId }) => {
         fetchVocab();
     }, [initialData, user, deckId]);
 
-    // Sync to localStorage
+    // Sync to localStorage - DISABLE for authenticated users
     useEffect(() => {
-        if (vocab.length > 0) {
+        // Only sync to localStorage if user is NOT logged in
+        if (!user && vocab.length > 0) {
             const deckId = vocab[0]?.level || 'custom';
             localStorage.setItem(`hsk_vocab_${deckId}`, JSON.stringify(vocab));
+        }
+
+        if (vocab.length > 0) {
             setStats(prev => ({ ...prev, ...getStats(vocab), total: vocab.length }));
         }
-    }, [vocab]);
+    }, [vocab, user]);
 
     const dueCards = useMemo(() => getDueCards(vocab), [vocab]);
 
@@ -410,24 +415,16 @@ const FlashcardSession = ({ data: initialData, onBack, user, deckId }) => {
         if (!currentWord) return;
 
         // 1. Calculate next review using SM-2 algorithm
+        // updatedReviewData now includes: { status, step_index, interval, ease_factor, repetitions, next_review_at }
         const updatedReviewData = calculateNextReview(quality, currentWord);
 
-        // 2. Determine status based on interval (this is what makes progress bar increase!)
-        let status = 'new';
-        if (updatedReviewData.interval === 0) {
-            status = 'new';
-        } else if (updatedReviewData.interval < 7) {
-            status = 'learning';
-        } else if (updatedReviewData.interval < 21) {
-            status = 'reviewing';
-        } else {
-            status = 'mastered'; // ✨ This makes the progress bar go up!
-        }
+        // 2. Status is now determined by the SM-2 algorithm directly
+        const status = updatedReviewData.status;
 
         // 3. Update local state immediately (optimistic update)
         const updatedVocab = vocab.map(card =>
             card.id === currentWord.id
-                ? { ...card, ...updatedReviewData, status }
+                ? { ...card, ...updatedReviewData }
                 : card
         );
         setVocab(updatedVocab);
@@ -436,13 +433,10 @@ const FlashcardSession = ({ data: initialData, onBack, user, deckId }) => {
         if (user && deckId) {
             try {
                 await saveWordProgress(user.id, deckId, currentWord.id, {
-                    status,
-                    easiness_factor: updatedReviewData.ease_factor,
-                    interval: updatedReviewData.interval,
-                    repetitions: updatedReviewData.repetitions,
-                    next_review_at: updatedReviewData.next_review
+                    ...updatedReviewData,
+                    next_review_at: updatedReviewData.next_review_at // Ensure explicit mapping if needed, though spread covers it
                 });
-                console.log(`✅ Progress saved for "${currentWord.han}" - Status: ${status}, Interval: ${updatedReviewData.interval} days`);
+                console.log(`✅ Progress saved for "${currentWord.han}" - Status: ${status}, Next Review: ${updatedReviewData.next_review_at}`);
             } catch (error) {
                 console.error('❌ Failed to save progress:', error);
             }

@@ -204,6 +204,8 @@ const Dashboard = ({ onSelectDeck, user }) => {
     const [loading, setLoading] = useState(true);
 
     const handleLogout = async () => {
+        // Clear local storage to prevent data leakage to other users
+        localStorage.clear();
         await supabase.auth.signOut();
     };
 
