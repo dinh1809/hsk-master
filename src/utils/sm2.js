@@ -155,10 +155,11 @@ export function calculateNextReview(quality, card) {
 export function getDueCards(vocabList) {
     const now = new Date();
     return vocabList.filter(card => {
-        // If no progress, it's new (handle separately or return as due if desired strategy)
-        // Usually getDueCards only returns things that HAVE a next_review_at
-        if (!card.next_review_at) return false;
+        // DEFINITIVE FIX: Treat 'new' cards as due immediately
+        // This ensures users can always start reviewing/learning without a separate "Learn" step
+        if (!card.next_review_at || card.status === 'new') return true;
 
+        // Otherwise check the date
         const nextReview = new Date(card.next_review_at);
         return nextReview <= now;
     });
