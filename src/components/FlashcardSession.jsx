@@ -750,6 +750,27 @@ const FlashcardSession = ({ data: initialData, onBack, user, deckId }) => {
                                             </div>
                                         )}
                                     </div>
+
+                                    {/* Rating Buttons for Learn Mode - Save Progress */}
+                                    {!isShadowingMode && (
+                                        <div className="border-t border-slate-100 pt-6 mt-4">
+                                            <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-4 text-center">How well do you know this?</p>
+                                            <div className="grid grid-cols-4 gap-3">
+                                                <button onClick={() => handleRateCard(0)} className="flex flex-col items-center gap-1 py-3 bg-rose-50 text-rose-700 border border-rose-100 rounded-xl font-bold text-xs hover:bg-rose-100 active:scale-95 transition-all">
+                                                    <ThumbsDown size={16} /> Again
+                                                </button>
+                                                <button onClick={() => handleRateCard(3)} className="flex flex-col items-center gap-1 py-3 bg-orange-50 text-orange-700 border border-orange-100 rounded-xl font-bold text-xs hover:bg-orange-100 active:scale-95 transition-all">
+                                                    <Clock size={16} /> Hard
+                                                </button>
+                                                <button onClick={() => handleRateCard(4)} className="flex flex-col items-center gap-1 py-3 bg-blue-50 text-blue-700 border border-blue-100 rounded-xl font-bold text-xs hover:bg-blue-100 active:scale-95 transition-all">
+                                                    <ThumbsUp size={16} /> Good
+                                                </button>
+                                                <button onClick={() => handleRateCard(5)} className="flex flex-col items-center gap-1 py-3 bg-emerald-50 text-emerald-700 border border-emerald-100 rounded-xl font-bold text-xs hover:bg-emerald-100 active:scale-95 transition-all">
+                                                    <Zap size={16} /> Easy
+                                                </button>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             )}
                         </div>
